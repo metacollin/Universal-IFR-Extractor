@@ -1,32 +1,39 @@
-Universal IFR Extractor
+Universal IFR Extractor for macOS
 =======================
+A simple command line port of donovan6000's Universal IFR Extractor (formerly a windows-only utility).
+
 
 Utility that can extract the internal forms representation from both EFI and UEFI modules and convert it into a human readable format.
 
-You can download an executable <a href="http://bios-mods.com/pub/donovan6000/Software/Universal%20IFR%20Extractor/Universal%20IFR%20Extractor.exe">here.</a>
-
-© 2014 donovan6000
+© Original work by 2014 donovan6000
+Ported to macOS by metacollin, 2016
 <br /><br /><br />
 Changelog:
 
-v0.6 6/16/2014
-* Added support for multiple string packages being used by one form.
+Initial release, synced to v0.6 6/16/2014 of the windows original.
 
-v0.5 3/2/2014
-* Fixed an issue that caused it to crash older versions of Windows.
-* Corrected form set offsets that were off by four bytes.
+Building
+-----------------
+There is only one prerequisite, cmake 2.8+.
 
-v0.4 2/10/2014
-* Fixed an issue with ASROCK FM2-A55M's Setup module. 
+Building is simple:
 
-v0.3 2/8/2014
-* Shows entire command's hex sequence in output.
+```
+git clone https://github.com/metacollin/Universal-IFR-Extractor.git
+cd Universal-IFR-Extractor
+mkdir build && cd build
+cmake ..
+make
+```
 
-v0.2 2/7/2014
-* I think I fixed the issue that prevented it from running on Windows XP.
-* Doesn't require any additional DLLs anymore.
-* The extract dialog now starts in the selected modules directory.
-* Fix the issue where it crashed on a few Acer BIOS. Thanks BDMaster!
+This will produce an executable called ifrextractor.  It has no external files or dependencies, so feel free to copy it to `/usr/local/bin` or simply use it outside your path (`./ifrextractor`).
 
-v0.1 1/7/2014
-* Initial release.
+Usage
+----------
+From the location of the built binary:
+
+```
+./ifrextractor input_file # Will check the file type and output UEFI, EFI, or UNKNOWN
+
+./ifrextractor input_file output_file # Will proceed with generating a human readable extraction.
+```
