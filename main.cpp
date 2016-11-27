@@ -111,21 +111,27 @@ int main(int argc, char* argv[])
 
 			// Get protocol
 			protocol = getType(buffer);
-		}
 
-		if (protocol == UNKNOWN)
-		{
-			cout << "UNKNOWN" << endl;
-		}
 
-		if (protocol == UEFI)
-		{
-			cout << "UEFI" << endl;
-		}
+			if (protocol == UNKNOWN)
+			{
+				cout << "File type: UNKNOWN" << endl;
+			}
 
-		if (protocol == EFI)
+			if (protocol == UEFI)
+			{
+				cout << "File type: UEFI" << endl;
+			}
+
+			if (protocol == EFI)
+			{
+				cout << "File type: EFI" << endl;
+			}
+		}
+		else
 		{
-			cout << "EFI" << endl;
+			cout << "ERROR: the file '" << fileLocation << "' doesn't seem to exist." << endl;
+			return -1;
 		}
 
 
@@ -167,6 +173,11 @@ int main(int argc, char* argv[])
 
 				// Generate UEFI IFR dump
 				generateUEFIIFRDump(outputFile, stringPackages, formSets, buffer, strings);
+			}
+			else
+			{
+				cout << "ERROR: the file '" << fileLocation << "' is of an unknown type, aborting." << endl;
+				return -1;
 			}
 		}
 	}
