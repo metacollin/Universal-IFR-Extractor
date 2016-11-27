@@ -18,7 +18,7 @@ There is only one prerequisite, cmake 2.8+.
 
 Building is simple:
 
-```
+``` sh
 git clone https://github.com/metacollin/Universal-IFR-Extractor.git
 cd Universal-IFR-Extractor
 mkdir build && cd build
@@ -32,7 +32,7 @@ Usage
 ----------
 From the location of the built binary:
 
-```
+``` sh
 ./ifrextractor input_file # Will check the file type and output UEFI, EFI, or UNKNOWN
 
 ./ifrextractor input_file output_file # Will proceed with generating a human readable extraction.
