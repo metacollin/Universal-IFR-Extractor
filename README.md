@@ -26,7 +26,7 @@ cmake ..
 make
 ```
 
-This will produce an executable called ifrextractor.  It has no external files or dependencies, so feel free to copy it to `/usr/local/bin` or simply use it outside your path (`./ifrextract`).
+This will produce an executable called ifrextract.  It has no external files or dependencies, so feel free to copy it to `/usr/local/bin` or simply use it outside your path (`./ifrextract`).
 
 Usage
 ----------
