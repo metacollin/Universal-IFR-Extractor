@@ -26,14 +26,14 @@ cmake ..
 make
 ```
 
-This will produce an executable called ifrextractor.  It has no external files or dependencies, so feel free to copy it to `/usr/local/bin` or simply use it outside your path (`./ifrextractor`).
+This will produce an executable called ifrextractor.  It has no external files or dependencies, so feel free to copy it to `/usr/local/bin` or simply use it outside your path (`./ifrextract`).
 
 Usage
 ----------
 From the location of the built binary:
 
 ``` sh
-./ifrextractor input_file # Will check the file type and output UEFI, EFI, or UNKNOWN
+./ifrextract input_file # Will check the file type and output UEFI, EFI, or UNKNOWN
 
-./ifrextractor input_file output_file # Will proceed with generating a human readable extraction.
+./ifrextract input_file output_file # Will proceed with generating a human readable extraction.
 ```
