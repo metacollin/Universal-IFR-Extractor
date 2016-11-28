@@ -33,4 +33,4 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang"
     )
 endif()
 
-add_executable(ifrextract UEFI.cpp EFI.CPP main.cpp)
+add_executable(ifrextract UEFI.cpp EFI.cpp main.cpp)
